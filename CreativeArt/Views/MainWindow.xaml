@@ -10,6 +10,26 @@
         Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Створити"/>
+                <MenuItem Header="Відкрити"/>
+                <MenuItem Header="Зберегти"/>
+                <MenuItem Header="Зберегти як"/>
+            </MenuItem>
+            <MenuItem Header="Інструменти">
+                
+            </MenuItem>
+            <MenuItem Header="Довідка">
+                
+            </MenuItem>
+        </Menu>
+        <DockPanel Grid.Row="1">
+            
+        </DockPanel>
     </Grid>
 </Window>
