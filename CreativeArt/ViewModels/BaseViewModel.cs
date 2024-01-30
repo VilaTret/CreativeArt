@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace CreativeArt.ViewModels
 {
-    internal class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
