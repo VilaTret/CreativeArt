@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace CreativeArt.ViewModels
 {
-    public class TabControlViewModel : BaseViewModel
+    public class TabControlPageViewModel : BaseViewModel
     {
         private ObservableCollection<TabViewModel> _tabCollection;
 
@@ -29,11 +29,6 @@ namespace CreativeArt.ViewModels
                 _selectedTab = value;
                 OnPropertyChanged(nameof(SelectedTab));
             }
-        }
-
-        public TabControlViewModel()
-        {
-            TabCollection = new ObservableCollection<TabViewModel>();
         }
 
         public ICommand RemoveTabCommand
@@ -67,6 +62,17 @@ namespace CreativeArt.ViewModels
                     TabCollection.Move(tabReoder.FromIndex, tabReoder.ToIndex);
                 });
             }
+        }
+
+        public TabControlPageViewModel()
+        {
+            TabCollection = new ObservableCollection<TabViewModel>();
+            AddTabCommand.Execute(new TabViewModel() { Header = "Hello", Content = "Hello world!" });
+            AddTabCommand.Execute(new TabViewModel() { Header = "Hello2", Content = "Hello world222222222222!" });
+            AddTabCommand.Execute(new TabViewModel() { Header = "Hello2", Content = "Hello world222222222222!" });
+            AddTabCommand.Execute(new TabViewModel() { Header = "Hello4", Content = "Hello world222222222222!" });
+            AddTabCommand.Execute(new TabViewModel() { Header = "Hello3", Content = "Hello world333333222!" });
+
         }
     }
 }

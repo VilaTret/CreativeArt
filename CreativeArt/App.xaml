@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:CreativeArt"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles\Icons.xaml"/>
+                <ResourceDictionary Source="Styles\Buttons.xaml"/>
+                <ResourceDictionary Source="Styles\TabItems.xaml"/>
+                <ResourceDictionary Source="Styles\TabControls.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

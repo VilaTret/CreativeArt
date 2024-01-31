@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using CreativeArt.Views;
+using System.Windows;
 
 namespace CreativeArt
 {
@@ -10,6 +11,7 @@ namespace CreativeArt
         public MainWindow()
         {
             InitializeComponent();
+            mainFrame.Navigate(new TabControlPage());
         }
     }
 }

@@ -5,9 +5,9 @@ namespace CreativeArt.Views
     /// <summary>
     /// Логика взаимодействия для TabControlWindow.xaml
     /// </summary>
-    public partial class TabControlWindow : Window
+    public partial class ChildWindow : Window
     {
-        public TabControlWindow()
+        public ChildWindow()
         {
             InitializeComponent();
         }
