@@ -3,20 +3,19 @@
                     xmlns:customcontrols="clr-namespace:CreativeArt.Controls">
 
     <Style x:Key="DragTabItem" TargetType="customcontrols:DragingTabItem">
-        <Setter Property="Background" Value="Blue"/>
-        <Setter Property="Width" Value="80"/>
+        <Setter Property="Background" Value="{StaticResource SecondBackgroundBrush}"/>
+        <Setter Property="Width" Value="100"/>
         <Setter Property="Height" Value="30"/>
-        <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="BorderBrush" Value="Transparent"/>
-        <Setter Property="FontSize" Value=" 14"/>
-        <Setter Property="FontStyle" Value="Normal"/>
-        <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
+        <Setter Property="FontFamily" Value="{StaticResource BaseFont}"/>
+        <Setter Property="FontSize" Value="{StaticResource Smal}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="customcontrols:DragingTabItem">
                     <Border Background="{TemplateBinding Background}"
+                            CornerRadius="7"
                             Width="{TemplateBinding Width}"
                             Height="{TemplateBinding Height}"
                             BorderThickness="{TemplateBinding BorderThickness}"
@@ -29,21 +28,24 @@
                             <ContentPresenter Grid.Column="0"
                                               ContentSource="Header"
                                               TextBlock.FontSize="{TemplateBinding FontSize}"
-                                              TextBlock.FontStyle="{TemplateBinding FontStyle}"
+                                              TextBlock.FontFamily="{TemplateBinding FontFamily}"
                                               TextBlock.Foreground="{TemplateBinding Foreground}"
                                               VerticalAlignment="Center"
-                                              HorizontalAlignment="Center"
+                                              HorizontalAlignment="Left"
                                               Margin="5"/>
                             <Button Grid.Column="1"
-                                    Style="{StaticResource CloseTabButton}"/>
+                                    Style="{StaticResource CloseTabButton}"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Margin="3"/>
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="LightBlue"/>
+                            <Setter Property="Background" Value="{StaticResource MouseHoverBrush}"/>
                         </Trigger>
                         <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="LightGray"/>
+                            <Setter Property="Background" Value="{StaticResource SelectedBrush}"/>
                             <Setter Property="Panel.ZIndex" Value="1"/>
                         </Trigger>
                     </ControlTemplate.Triggers>

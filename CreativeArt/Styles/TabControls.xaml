@@ -3,7 +3,12 @@
                     xmlns:customcontrols="clr-namespace:CreativeArt.Controls">
 
     <Style x:Key="DragTabControl" TargetType="customcontrols:DragingTabControl">
-        <Setter Property="Background" Value="Gray"/>
+        <Setter Property="Background" Value="{StaticResource BaseBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="FontFamily" Value="{StaticResource BaseFont}"/>
+        <Setter Property="FontSize" Value="{StaticResource Regular}"/>
+        <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="customcontrols:DragingTabControl">
@@ -14,10 +19,15 @@
                         </Grid.RowDefinitions>
                         <customcontrols:DragingTabPanel Grid.Row="0"
                                                         IsItemsHost="True"
-                                                        Background="{TemplateBinding Background}"/>
+                                                        Background="Transparent"/>
                         <Border Grid.Row="1"
-                                Background="{TemplateBinding Background}">
-                            <ContentControl Content="{Binding SelectedItem.Content, RelativeSource={RelativeSource AncestorType={x:Type customcontrols:DragingTabControl}}}"/>
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="10">
+                            <ContentControl Content="{Binding SelectedItem.Content, RelativeSource={RelativeSource AncestorType={x:Type customcontrols:DragingTabControl}}}"
+                                            FontFamily="{TemplateBinding FontFamily}"
+                                            FontSize="{TemplateBinding FontSize}"
+                                            Foreground="{TemplateBinding Foreground}"
+                                            Margin="5"/>
                         </Border>
                     </Grid>
                 </ControlTemplate>

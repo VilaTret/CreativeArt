@@ -2,9 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <DataTemplate x:Key="CrossIcon">
-        <Viewbox Margin="5" Stretch="Uniform">
+        <Viewbox Stretch="Uniform"
+                 VerticalAlignment="Center"
+                 HorizontalAlignment="Center">
             <Grid>
-                <Path Data="M 4 4 L 20 20 M 4 20 L 20 4" Fill="Black" Stroke="Black" StrokeThickness="2"/>
+                <Path Data="M 4 4 L 20 20 M 4 20 L 20 4" Fill="White" Stroke="White" StrokeThickness="2"/>
             </Grid>
         </Viewbox>
     </DataTemplate>
