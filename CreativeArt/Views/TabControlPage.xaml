@@ -17,17 +17,16 @@
 
     <Grid>
         <customcontrols:DragingTabControl Style="{StaticResource DragTabControl}"
-                                          ItemContainerStyle="{StaticResource DragTabItem}"
                                           ItemsSource="{Binding TabCollection}"
                                           SelectedItem="{Binding SelectedTab}"
                                           ReorderTabsCommand="{Binding ReorderTabsCommand}">
-            <customcontrols:DragingTabControl.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <TextBlock Text="{Binding Header}"/>
-                    </Grid>
-                </DataTemplate>
-            </customcontrols:DragingTabControl.ItemTemplate>
+            <customcontrols:DragingTabControl.ItemContainerStyle>
+                <Style TargetType="customcontrols:DragingTabItem" BasedOn="{StaticResource DragTabItem}">
+                    <Setter Property="Header" Value="{Binding Header}"/>
+                    <Setter Property="CloseTabCommand" Value="{Binding DataContext.RemoveTabCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=local:TabControlPage}}"/>
+                    <Setter Property="CloseTabCommandParameter" Value="{Binding}"/>
+                </Style>
+            </customcontrols:DragingTabControl.ItemContainerStyle>
         </customcontrols:DragingTabControl>
     </Grid>
 </Page>

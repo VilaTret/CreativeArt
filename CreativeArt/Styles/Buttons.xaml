@@ -24,7 +24,7 @@
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Background" Value="Transparent"/>
                         </Trigger>
-                        <Trigger Property="IsEnabled" Value="True">
+                        <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Background" Value="{StaticResource EnabledBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>

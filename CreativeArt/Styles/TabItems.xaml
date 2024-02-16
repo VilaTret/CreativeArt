@@ -8,6 +8,7 @@
         <Setter Property="Height" Value="30"/>
         <Setter Property="BorderThickness" Value="2"/>
         <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
+        <Setter Property="FontStyle" Value="Normal"/>
         <Setter Property="FontFamily" Value="{StaticResource BaseFont}"/>
         <Setter Property="FontSize" Value="{StaticResource Smal}"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
@@ -29,6 +30,7 @@
                                               ContentSource="Header"
                                               TextBlock.FontSize="{TemplateBinding FontSize}"
                                               TextBlock.FontFamily="{TemplateBinding FontFamily}"
+                                              TextBlock.FontStyle="{TemplateBinding FontStyle}"
                                               TextBlock.Foreground="{TemplateBinding Foreground}"
                                               VerticalAlignment="Center"
                                               HorizontalAlignment="Left"
@@ -37,7 +39,9 @@
                                     Style="{StaticResource CloseTabButton}"
                                     VerticalAlignment="Center"
                                     HorizontalAlignment="Center"
-                                    Margin="3"/>
+                                    Margin="3"
+                                    Command="{TemplateBinding CloseTabCommand}"
+                                    CommandParameter="{TemplateBinding CloseTabCommandParameter}"/>
                         </Grid>
                     </Border>
                     <ControlTemplate.Triggers>

@@ -7,6 +7,7 @@
         <Setter Property="BorderBrush" Value="{StaticResource BorderBrush}"/>
         <Setter Property="BorderThickness" Value="2"/>
         <Setter Property="FontFamily" Value="{StaticResource BaseFont}"/>
+        <Setter Property="FontStyle" Value="Normal"/>
         <Setter Property="FontSize" Value="{StaticResource Regular}"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundBrush}"/>
         <Setter Property="Template">
@@ -25,6 +26,7 @@
                                 CornerRadius="10">
                             <ContentControl Content="{Binding SelectedItem.Content, RelativeSource={RelativeSource AncestorType={x:Type customcontrols:DragingTabControl}}}"
                                             FontFamily="{TemplateBinding FontFamily}"
+                                            FontStyle="{TemplateBinding FontStyle}"
                                             FontSize="{TemplateBinding FontSize}"
                                             Foreground="{TemplateBinding Foreground}"
                                             Margin="5"/>
