@@ -67,12 +67,6 @@ namespace CreativeArt.ViewModels
         public TabControlPageViewModel()
         {
             TabCollection = new ObservableCollection<TabViewModel>();
-            AddTabCommand.Execute(new TabViewModel() { Header = "Hello", Content = "Hello world!" });
-            AddTabCommand.Execute(new TabViewModel() { Header = "Hello2", Content = "Hello world222222222222!" });
-            AddTabCommand.Execute(new TabViewModel() { Header = "Hello2", Content = "Hello world222222222222!" });
-            AddTabCommand.Execute(new TabViewModel() { Header = "Hello4", Content = "Hello world222222222222!" });
-            AddTabCommand.Execute(new TabViewModel() { Header = "Hello3", Content = "Hello world333333222!" });
-
         }
     }
 }

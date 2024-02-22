@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace CreativeArt.Views
 {
@@ -10,6 +11,11 @@ namespace CreativeArt.Views
         public ChildWindow()
         {
             InitializeComponent();
+        }
+
+        public ChildWindow(Page page) : this()
+        {
+            mainFrame.Content = page;
         }
     }
 }

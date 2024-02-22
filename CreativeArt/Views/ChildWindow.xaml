@@ -9,6 +9,6 @@
         Height="450"
         Width="800">
     <Grid>
-        
+        <Frame x:Name="mainFrame"/>
     </Grid>
 </Window>

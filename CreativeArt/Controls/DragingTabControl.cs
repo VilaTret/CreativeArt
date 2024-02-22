@@ -76,7 +76,7 @@ namespace CreativeArt.Controls
             DragingTabItem tab = sender as DragingTabItem;
             if (e.LeftButton == MouseButtonState.Pressed && tab == CapturedTab)
             {
-                RaiseEvent(new TabDraggedOutsideBondsEventArgs(TabDraggedOutsideBondsEvent, this, tab.DataContext));
+                RaiseEvent(new TabDraggedOutsideBondsEventArgs(TabDraggedOutsideBondsEvent, this, tab.Content));
             }
             CapturedTab = null;
         }

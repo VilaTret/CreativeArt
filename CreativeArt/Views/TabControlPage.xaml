@@ -19,7 +19,8 @@
         <customcontrols:DragingTabControl Style="{StaticResource DragTabControl}"
                                           ItemsSource="{Binding TabCollection}"
                                           SelectedItem="{Binding SelectedTab}"
-                                          ReorderTabsCommand="{Binding ReorderTabsCommand}">
+                                          ReorderTabsCommand="{Binding ReorderTabsCommand}"
+                                          TabDraggedOutsideBonds="TabDraggedOutsideBonds">
             <customcontrols:DragingTabControl.ItemContainerStyle>
                 <Style TargetType="customcontrols:DragingTabItem" BasedOn="{StaticResource DragTabItem}">
                     <Setter Property="Header" Value="{Binding Header}"/>

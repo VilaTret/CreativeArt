@@ -66,12 +66,14 @@
     <Compile Include="Controls\DragingTabPanel.cs" />
     <Compile Include="Controls\TabDraggedOutsideBondsEventArgs.cs" />
     <Compile Include="Controls\TabDraggedOutsideBondsEventHandler.cs" />
+    <Compile Include="Utilities\VisualTreeFinding.cs" />
     <Compile Include="Views\TabControlPage.xaml.cs">
       <DependentUpon>TabControlPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ChildWindow.xaml.cs">
       <DependentUpon>ChildWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Win32Helper.cs" />
     <Page Include="Styles\Buttons.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

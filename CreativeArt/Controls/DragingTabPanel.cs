@@ -1,7 +1,7 @@
-﻿using System.Windows;
+﻿using CreativeArt.Utilities;
+using System.Windows;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
-using System.Windows.Media;
 
 namespace CreativeArt.Controls
 {
@@ -11,24 +11,10 @@ namespace CreativeArt.Controls
 
         private Point _startCursorPosition;
 
-        private static DragingTabControl GetParentTabControl(DependencyObject tabPanel)
-        {
-            DependencyObject parent = VisualTreeHelper.GetParent(tabPanel);
-            while (parent != null)
-            {
-                if (parent is DragingTabControl parentTabControl)
-                {
-                    return parentTabControl;
-                }
-                parent = VisualTreeHelper.GetParent(parent);
-            }
-            return null;
-        }
-
         protected override void OnVisualParentChanged(DependencyObject oldParent)
         {
             base.OnVisualParentChanged(oldParent);
-            _parentTabControl = GetParentTabControl(this);
+            _parentTabControl = VisualTreeFinding.FindParent<DragingTabControl>(this);
         }
 
         protected virtual void OnTabMouseLeftButtonDown(object sender, MouseEventArgs e)
