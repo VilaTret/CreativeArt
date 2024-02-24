@@ -43,11 +43,10 @@ namespace CreativeArt.Views
 
         protected virtual void OnParentWindowLocationChanged(object sender, EventArgs e)
         {
-            Window parentWindow = sender as Window;
-            if (parentWindow.IsLoaded)
+            if (IsLoaded)
             {
-                Point mousePosition = Win32Helper.GetMousePosition(this);
-                Window windowUnder = FindWindowUnderThisAt(mousePosition, parentWindow);
+                Window parentWindow = sender as Window;
+                Window windowUnder = FindWindowUnderThisAt(Win32Helper.GetMousePosition(this), parentWindow);
                 if (windowUnder != null)
                 {
                     if (VisualTreeFinding.FindChild<TabControlPage>(windowUnder).DataContext is TabControlPageViewModel viewModelTabControlPageUnder
@@ -93,12 +92,12 @@ namespace CreativeArt.Views
             return windowsUnderCurrent.FirstOrDefault();
         }
 
-        private static bool CheckMouseOverTabPanel(Point mousePoint, Window parentWindow)
+        private static bool CheckMouseOverTabPanel(Point mousePosition, Window parentWindow)
         {
             DragingTabPanel tabPanel = VisualTreeFinding.FindChild<DragingTabPanel>(parentWindow);
             if (tabPanel != null)
             {
-                return GetTabPanelRectRelativeToScreen(tabPanel, parentWindow).Contains(mousePoint);
+                return GetTabPanelRectRelativeToScreen(tabPanel, parentWindow).Contains(mousePosition);
             }
             return false;
         }
@@ -120,7 +119,7 @@ namespace CreativeArt.Views
             Rect tabPanelRect = Win32Helper.GetWindowRect(window);
             Rect tabPanelBounds = tabPanel.TransformToAncestor(window).TransformBounds(new Rect(tabPanel.Margin.Left, tabPanel.Margin.Top, tabPanel.ActualWidth, tabPanel.ActualHeight));
             tabPanelRect.X += tabPanelBounds.X;
-            tabPanelRect.Y += tabPanelBounds.Y;
+            tabPanelRect.Y += tabPanelBounds.Y + 32;
             tabPanelRect.Width = tabPanelBounds.Width;
             tabPanelRect.Height = tabPanelBounds.Height;
             return tabPanelRect;

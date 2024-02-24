@@ -1,8 +1,5 @@
-﻿using CreativeArt.Controls;
-using CreativeArt.Utilities;
-using CreativeArt.ViewModels;
+﻿using CreativeArt.ViewModels;
 using CreativeArt.Views;
-using System;
 using System.Windows;
 
 namespace CreativeArt
